@@ -3,6 +3,7 @@
 $font-family = "Clear Sans";
 $font-family-fallback = sans-serif;
 
+$font-size-small = 16px;
 $font-size-default = 18px;
 $font-weight-thin = 100;
 $font-weight-light = 300;
@@ -72,10 +73,6 @@ tap-highlight() {
 
 .tap-highlight {
     tap-highlight();
-}
-
-:host {
-    --shape-shifter-secondary-color: $color-primary;
 }
 
 :host, button, input {
@@ -150,24 +147,28 @@ input.ghost, :host(.ghost) > input {
 }
 
 textarea {
-    font-family: monospace;
     font-weight: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
     border: none;
     background: #fff;
     margin: 0;
     display: block;
-    border: solid 10px transparent;
     padding: 0;
-    font-size: 12px;
     border-radius: 0;
     appearance: none;
-    color: $text-color-faint;
+    resize: none;
 }
 
 textarea[nowrap] {
     white-space: pre;
     word-wrap: normal;
     overflow-x: scroll;
+}
+
+input:not(:focus), textarea:not(:focus) {
+    cursor: pointer;
 }
 
 strong {
